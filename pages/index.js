@@ -70,16 +70,16 @@ export default function Home({ articles, results }) {
 }
 Home.Layout = MainLayout;
 
-// export async function getServerSideProps() {
-//   const apiKey = process.env.API_KEY;
-//   const response = await fetch(
-//     `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}&page=1&pageSize=6`
-//   );
-//   const data = await response.json();
-//   return {
-//     props: {
-//       articles: data.articles,
-//       results: data.totalResults,
-//     },
-//   };
-// }
+export async function getServerSideProps() {
+  const apiKey = process.env.API_KEY;
+  const response = await fetch(
+    `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}&page=1&pageSize=6`
+  );
+  const data = await response.json();
+  return {
+    props: {
+      articles: data.articles,
+      results: data.totalResults,
+    },
+  };
+}
