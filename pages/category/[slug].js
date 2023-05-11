@@ -24,9 +24,9 @@ const Category = ({articles,category,results}) => {
     <h1 className=" mt-20 text-center text-4xl mb-6">{category} Head Lines</h1>
     <div className="flex flex-wrap gap-5  sm:justify-center ">
     <InfiniteScroll
-          dataLength={newsArticle.length} //This is important field to render the next data
+          dataLength={newsArticle && newsArticle.length} //This is important field to render the next data
           next={fetchData}
-          hasMore={newsArticle.length !== totalResult}
+          hasMore={newsArticle && newsArticle.length !== totalResult}
           loader={
             
             <div className='text-center'>

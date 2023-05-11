@@ -45,9 +45,9 @@ export default function Home({ articles, results }) {
         {
 // newsArticle&&
         <InfiniteScroll
-          dataLength={newsArticle.length} //This is important field to render the next data
+          dataLength={newsArticle && newsArticle.length} //This is important field to render the next data
           next={fetchData}
-          hasMore={newsArticle.length !== totalResult}
+          hasMore={newsArticle && newsArticle.length !== totalResult}
           loader={<h4>Loading...</h4>}
           endMessage={
             <p style={{ textAlign: "center" }}>
