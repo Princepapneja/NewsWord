@@ -43,7 +43,7 @@ export default function Home({ articles, results }) {
           placeholder="Search..."
         />
         {
-// newsArticle&&
+newsArticle&&
         <InfiniteScroll
           dataLength={newsArticle && newsArticle.length} //This is important field to render the next data
           next={fetchData}
